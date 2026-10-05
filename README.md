@@ -1,4 +1,4 @@
-# 🔍 Financial Fraud Detection & Exploratory Data Analysis (EDA)
+# 🔍 Financial Fraud Detection Analysis
 
 A comprehensive exploratory data analysis and risk profiling project using a clean dataset of 50,000 financial transactions to identify fraudulent patterns, device risks, and transaction velocity triggers.
 
