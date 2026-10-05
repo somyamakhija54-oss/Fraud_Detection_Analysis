@@ -1,34 +1,38 @@
-# Fraud Detection Clean Dataset 🛡️
+# 🔍 Financial Fraud Detection & Exploratory Data Analysis (EDA)
 
-A clean, production-ready tabular dataset designed for building, testing, and benchmarking **Machine Learning models for Fraud Detection**. Containing 50,000 transaction records with balanced feature sets, this dataset is ideal for classification tasks, anomaly detection pipelines, and exploratory data analysis (EDA).
-
----
-
-## 📊 Dataset Overview
-
-* **Total Records:** 50,000 transactions
-* **Features:** 12 columns (mix of numerical and categorical variables)
-* **Target Variable:** `Fraudulent` (Binary: `0` for Legitimate, `1` for Fraudulent)
-* **Class Distribution:** ~95.08% Legitimate / ~4.92% Fraudulent (realistic class imbalance)
-* **File Format:** CSV (`Fraud_Detection_Clean_Dataset.csv`)
+A comprehensive exploratory data analysis and risk profiling project using a clean dataset of 50,000 financial transactions to identify fraudulent patterns, device risks, and transaction velocity triggers.
 
 ---
 
-## 🗂️ Data Schema & Features
+## 📌 Executive Summary
+Financial fraud poses a major threat to digital payment ecosystems. This analysis evaluates **50,000 transaction records** to uncover behavioral trends, high-risk merchant/device categories, and velocity-based triggers. With an overall fraud rate of **~4.92%**, the study isolates critical risk indicators that can help optimize rule-based engines and machine learning classification pipelines.
 
-| Column Name | Data Type | Description |
+---
+
+## 📂 Dataset Overview & Schema
+
+| Feature Name | Data Type | Description |
 | :--- | :--- | :--- |
-| `Transaction_ID` | `object` | Unique identifier for each transaction (e.g., T1, T2) |
-| `User_ID` | `int` | Unique identifier for the user making the transaction |
-| `Transaction_Amount` | `float` | Monetary value of the transaction |
-| `Transaction_Type` | `object` | Method/type of transaction (e.g., ATM Withdrawal, etc.) |
-| `Time_of_Transaction` | `float` | Hour of the day the transaction occurred (0.0 – 23.0) |
-| `Device_Used` | `object` | Device type utilized (e.g., Mobile, Tablet, etc.) |
-| `Location` | `object` | Geographical location of the transaction |
-| `Previous_Fraudulent_Transactions` | `int` | Count of prior fraudulent flags linked to the user/profile |
-| `Account_Age` | `int` | Age of the user account (in days/months relative to scale) |
-| `Number_of_Transactions_Last_24H` | `int` | Velocity metric: transaction count in the past 24 hours |
-| `Payment_Method` | `object` | Payment instrument used (e.g., Credit Card, Debit Card) |
-| `Fraudulent` | `int` | Target label (`1` = Fraud, `0` = Not Fraud) |
+| `Transaction_ID` | String | Unique identifier per transaction |
+| `User_ID` | Integer | Unique identifier for the account user |
+| `Transaction_Amount` | Float | Monetary value of the transaction |
+| `Transaction_Type` | String | Type of transaction (e.g., ATM Withdrawal, Transfer) |
+| `Time_of_Transaction` | Float | Hour of the day (0.0 to 23.0) |
+| `Device_Used` | String | Device type utilized (Mobile, Tablet, Desktop) |
+| `Location` | String | Geographical location of the transaction |
+| `Previous_Fraudulent_Transactions` | Integer | Historical count of past fraudulent flags linked to user |
+| `Account_Age` | Integer | Age of the user account |
+| `Number_of_Transactions_Last_24H` | Integer | Transaction velocity in the last 24 hours |
+| `Payment_Method` | String | Payment instrument (Credit Card, Debit Card, etc.) |
+| `Fraudulent` | Integer | Target label (`1` = Fraud, `0` = Legitimate) |
+
+---
+
+## 📊 Key Data Insights & Findings
+
+1. **Class Imbalance:** Out of 50,000 total records, exactly **2,460 transactions (~4.92%)** were flagged as fraudulent, representing a typical real-world imbalanced distribution.
+2. **Transaction Amounts:** Transaction values range widely from **~5.03 to ~49,997.80**, with higher volumes showing distinct risk concentration tiers.
+3. **User Velocity & History:** Users with a higher frequency of transactions in the last 24 hours and multiple `Previous_Fraudulent_Transactions` exhibit exponentially higher fraud probability.
+4. **Temporal Patterns:** Transactions distributed across the 24-hour cycle (`Time_of_Transaction`) highlight specific peak hours vulnerable to malicious activities.
 
 ---
