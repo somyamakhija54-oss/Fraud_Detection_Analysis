@@ -9,24 +9,6 @@ Financial fraud poses a major threat to digital payment ecosystems. This analysi
 
 ---
 
-## 📂 Dataset Overview & Schema
-
-| Feature Name | Data Type | Description |
-| :--- | :--- | :--- |
-| `Transaction_ID` | String | Unique identifier per transaction |
-| `User_ID` | Integer | Unique identifier for the account user |
-| `Transaction_Amount` | Float | Monetary value of the transaction |
-| `Transaction_Type` | String | Type of transaction (e.g., ATM Withdrawal, Transfer) |
-| `Time_of_Transaction` | Float | Hour of the day (0.0 to 23.0) |
-| `Device_Used` | String | Device type utilized (Mobile, Tablet, Desktop) |
-| `Location` | String | Geographical location of the transaction |
-| `Previous_Fraudulent_Transactions` | Integer | Historical count of past fraudulent flags linked to user |
-| `Account_Age` | Integer | Age of the user account |
-| `Number_of_Transactions_Last_24H` | Integer | Transaction velocity in the last 24 hours |
-| `Payment_Method` | String | Payment instrument (Credit Card, Debit Card, etc.) |
-| `Fraudulent` | Integer | Target label (`1` = Fraud, `0` = Legitimate) |
-
----
 
 ## 📊 Key Data Insights & Findings
 
